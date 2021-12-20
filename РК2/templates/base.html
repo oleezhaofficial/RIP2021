@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Средства разработки и ЯП</title>
+</head>
+<body>
+    <h1><a href="admin/">кабинет админа</a></h1>
+    {% for i in ides %}
+    <ul>
+        <li>ID IDE: {{ i.id }} <br>
+            Название: {{ i.name }}
+        <ol>
+            {% for l in langs %}
+            {% if l.IDE_id == i %}
+            <li>ID ЯП:      {{ l.id }}<br>
+                Название:   {{ l.name }}<br>
+                Рейтинг:    {{ l.rating }}<br>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ol>
+        </li>
+    </ul>
+    {% endfor %}
+
+</body>
+</html>
